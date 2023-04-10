@@ -1,0 +1,41 @@
+ root = tk.Tk()
+
+ root.geometry("500x300")
+ root.title("EduConnect")
+
+ label = tk.Label(root, text="Welcome to EduConnect", font=('Helvetica', 18))
+ label.pack(padx=10, pady=20)
+
+ buttonFrame = tk.Frame(root)
+ buttonFrame.columnconfigure(0, weight=1)
+ buttonFrame.columnconfigure(1, weight=1)
+
+ studentButton = tk.Button(buttonFrame, text="Student Login", font=('Helvetica', 18))
+ studentButton.grid(row=0, column=0, sticky=tk.W + tk.E, padx=10)
+
+ lecturerButton = tk.Button(buttonFrame, text="Lecturer Login", font=('Helvetica', 18))
+ lecturerButton.grid(row=0, column=1, sticky=tk.W + tk.E, padx=10)
+ buttonFrame.pack(fill='x',pady=10,padx=10)
+
+ newWindowButton = tk.Button(root, width=25,text="New Window", font=('Helvetica',18))
+ newWindowButton.pack(padx=10, pady=10)
+
+
+ root.mainloop()
+
+
+ Code Samples
+
+ textbox = tk.Text(root, height=1, width=15, font=('Arial',18))
+ textbox.pack()
+ textbox = tk.Entry(root, width=15, font=('Arial', 18))
+ textbox.pack()
+
+ studentButton = tk.Button(root, text="Student Login", font=('Helvetica',18))
+ studentButton.pack(padx=10, pady=10)
+
+ lecturerButton = tk.Button(root, text="Lecturer Login", font=('Helvetica',18))
+ lecturerButton.pack(padx=10, pady=10)
+
+
+ tkinter.messagebox.askyesno("Are you sure? ")
