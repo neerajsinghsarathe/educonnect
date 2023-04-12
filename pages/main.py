@@ -1,6 +1,6 @@
 import tkinter as tk
 import subprocess as sb_p
-from Login import Login
+from pages.Login import Login
 
 
 def navigateTo(current, userType):
@@ -30,6 +30,4 @@ class Main(tk.Tk):
         newWindowButton.pack(padx=10, pady=10)
 
 
-if __name__ == "__main__":
-    app = Main()
-    app.mainloop()
+
