@@ -1,18 +1,20 @@
 import tkinter as tk
 from tkinter import messagebox
-
+from services.services import login
 from pages.studenthomepage import StudentHomePage
 
 
-def login(email, password, usertype, self):
+def loginTo(email, password, usertype, self):
+    res = login(email, password, usertype)
     if usertype == 'student':
-        if email == 'student' and password == '123456':
+        if res:
+            print(res)
             self.destroy()
             StudentHomePage().mainloop()
         else:
             messagebox.showerror(title="Status", message="Invalid UserName or Password")
     if usertype == 'lecturer':
-        if email == 'lecturer' and password == '5678':
+        if res:
             messagebox.showinfo(title="Login Status", message="success")
         else:
             messagebox.showerror(title="Status", message="Invalid UserName or Password")
@@ -58,8 +60,10 @@ class Login(tk.Tk):
     def login(self):
         email = self.email.get()
         password = self.password.get()
-        login(email, password, self.userType, self)
+        loginTo(email, password, self.userType, self)
 
     def shortcut(self, event):
         if event.keysym == 'Return':
             return self.login()
+        if event.keysym == 'Esc':
+            return self.destroy()

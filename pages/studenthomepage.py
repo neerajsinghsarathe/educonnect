@@ -19,9 +19,9 @@ def goTo(self, frameName):
     destroyAllFrames(self)
     match frameName:
         case 'Courses':
-            Courses(self).frame.pack()
+            Courses(self)
         case 'Assignments':
-            Assignments(self).frame.pack()
+            Assignments(self)
         case 'Quizzes':
             Quizzes(self).frame.pack()
         case 'Files':
@@ -37,6 +37,7 @@ class StudentHomePage(tk.Tk):
         super().__init__()
         self.title('HomePage')
         self.geometry('500x300')
+        self.bind("<KeyPress>", self.shortcut)
 
         # Creating Menubar
         menubar = Menu(self)
@@ -50,6 +51,11 @@ class StudentHomePage(tk.Tk):
         menubar.add_command(label='Discussion Forum', command=lambda: goTo(self, 'Discussion Forum'))
         menubar.add_command(label='Exit', command=lambda: goTo(self, 'exit'))
 
-# if __name__ == "__main__":
-#     app = HomePage()
-#     app.mainloop()
+        goTo(self, 'Courses')
+
+    def shortcut(self, event):
+        if event.keysym == 'Escape':
+            return self.destroy()
+
+
+StudentHomePage().mainloop()
