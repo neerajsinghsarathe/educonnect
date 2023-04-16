@@ -32,17 +32,17 @@ class Courses:
             enrollButton.pack(padx=10, pady=10, side=tk.LEFT)
 
             viewDetailsButton = tk.Button(course_widget, width=10, text="View Details",
-                                          command=lambda name=course["name"]: view_details(name))
+                                          command=lambda details=course["details"]: view_details(details))
             viewDetailsButton.pack(padx=10, pady=10, side=tk.LEFT)
 
         def enroll(course_name):
             print(f"Enrolling in {course_name}...")
 
-        def view_details(course_name):
+        def view_details(details):
             # Open a new window to show course details
             details_window = tk.Toplevel()
-            details_window.title(course_name)
-            details_label = tk.Label(details_window, text=f"Details for {course_name}")
+            details_window.title('Course Details')
+            details_label = tk.Label(details_window, text=details)
             details_label.pack()
 
         # lecturerButton = Button(self.frame, text="Lecturer Login", font=('Helvetica', 18))

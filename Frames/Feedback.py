@@ -25,7 +25,7 @@ class Feedback:
         self.feedbackBox.grid(row=2, column=1, columnspan=3)
         frame2.pack()
 
-        submitButton = tk.Button(root, text="Login", font=('Helvetica', 14), command=self.submit)
+        submitButton = tk.Button(root, text="Submit", font=('Helvetica', 14), command=self.submit)
         submitButton.pack(padx=10, pady=10)
 
     def submit(self):
