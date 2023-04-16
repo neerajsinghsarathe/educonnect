@@ -18,6 +18,8 @@ class Courses:
         label = tk.Label(frame, text="Courses Page", font=('Arial', '20'))
         label.pack()
 
+        root.geometry('500x300')
+
         for course in courses:
             course_widget = tk.Frame(frame)
             course_widget.pack(side=tk.TOP, padx=5, pady=5)

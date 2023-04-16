@@ -4,6 +4,7 @@ from tkinter import *
 from Frames.Assignments import Assignments
 from Frames.Courses import Courses
 from Frames.DiscussionForum import DiscussionForum
+from Frames.Feedback import Feedback
 from Frames.Files import Files
 from Frames.Quizzes import Quizzes
 
@@ -23,11 +24,13 @@ def goTo(self, frameName):
         case 'Assignments':
             Assignments(self)
         case 'Quizzes':
-            Quizzes(self).frame.pack()
+            Quizzes(self)
         case 'Files':
             Files(self).frame.pack()
         case 'Discussion Forum':
             DiscussionForum(self).frame.pack()
+        case 'Feedback':
+            Feedback(self)
         case 'exit':
             self.destroy()
 
@@ -48,6 +51,7 @@ class StudentHomePage(tk.Tk):
         menubar.add_command(label='Assignments', command=lambda: goTo(self, 'Assignments'))
         menubar.add_command(label='Quizzes', command=lambda: goTo(self, 'Quizzes'))
         menubar.add_command(label='Files', command=lambda: goTo(self, 'Files'))
+        menubar.add_command(label='Feedback', command=lambda: goTo(self, 'Feedback'))
         menubar.add_command(label='Discussion Forum', command=lambda: goTo(self, 'Discussion Forum'))
         menubar.add_command(label='Exit', command=lambda: goTo(self, 'exit'))
 

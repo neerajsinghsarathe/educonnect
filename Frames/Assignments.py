@@ -10,6 +10,7 @@ assignments = [
 
 class Assignments:
     def __init__(self, root):
+        root.geometry('500x300')
         frame = tk.Frame(root)
         frame.pack()
 
