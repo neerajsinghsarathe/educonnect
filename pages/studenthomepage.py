@@ -62,4 +62,4 @@ class StudentHomePage(tk.Tk):
             return self.destroy()
 
 
-StudentHomePage().mainloop()
+# StudentHomePage().mainloop()
