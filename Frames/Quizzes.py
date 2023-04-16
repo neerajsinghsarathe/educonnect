@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from services.services import submit
+
 questions = [
     {
         "question": "What is the capital of France?",
@@ -27,6 +29,7 @@ def select_option(question_index, option):
 
 class Quizzes:
     def __init__(self, root):
+        root.geometry('500x700')
         self.questions = [
             {
                 "question": "What is the capital of France?",
@@ -86,9 +89,12 @@ class Quizzes:
 
         # Check each answer and update the result label
         correct_answers = 0
+        quiz_data = []
         for i, question in enumerate(self.questions):
+            quiz_data.append({"question": question['question'], "answer": self.user_answers[i]})
             if self.user_answers[i] == question["answer"]:
                 correct_answers += 1
+        res = submit(quiz_data, 'quiz')
         self.result_label.config(text=f"You got {correct_answers} out of {len(self.questions)} questions correct.")
 
     def select_option(self, question_index, option):
