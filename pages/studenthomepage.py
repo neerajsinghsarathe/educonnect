@@ -40,10 +40,11 @@ class StudentHomePage(tk.Tk):
         super().__init__()
         self.title('HomePage')
         self.geometry('500x300')
+        self.tk.call('tk', 'useinputmethods', '1')
         self.bind("<KeyPress>", self.shortcut)
 
         # Creating Menubar
-        menubar = Menu(self)
+        menubar = Menu(self, tearoff=False)
         self.config(menu=menubar)
 
         # Adding Menus
