@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
+
+from pages.lecturerHomepage import LecturerHomePage
 from services.services import login
 from pages.studenthomepage import StudentHomePage
 
@@ -15,7 +17,7 @@ def loginTo(email, password, usertype, self):
             messagebox.showerror(title="Status", message="Invalid UserName or Password")
     if usertype == 'lecturer':
         if res:
-            messagebox.showinfo(title="Login Status", message="success")
+            LecturerHomePage().mainloop()
         else:
             messagebox.showerror(title="Status", message="Invalid UserName or Password")
 

@@ -1,12 +1,12 @@
 import tkinter as tk
 from tkinter import *
 
-from Frames.Assignments import Assignments
-from Frames.Courses import Courses
-from Frames.DiscussionForum import DiscussionForum
-from Frames.Feedback import Feedback
-from Frames.Files import Files
-from Frames.Quizzes import Quizzes
+from Frames.student.Assignments import Assignments
+from Frames.student.Courses import Courses
+from Frames.student.DiscussionForum import DiscussionForum
+from Frames.student.Feedback import Feedback
+from Frames.student.Files import Files
+from Frames.student.Quizzes import Quizzes
 
 
 def destroyAllFrames(root):
